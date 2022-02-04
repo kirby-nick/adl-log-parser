@@ -1,0 +1,20 @@
+<h5>Log ID: <%= @event_log.id %></h5>
+<h5>Source IP: <%= @event_log.source_ip %></h5>
+<h5>Destination IP: <%= @event_log.dest_ip %></h5>
+<h5>Body:</h5>
+<p><%= @event_log.body %></p>
+
+<br>
+<%= link_to "Edit", edit_event_log_path(@event_log) %>
+<%= link_to "Event Logs", event_logs_path %>
+<%= link_to "Delete", event_log_path(@event_log), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+<br>
+<h5>Comments</h5>
+<%= render @event_log.comments %>
+
+<br>
+<h5>Add a Comment:</h5>
+<%= render "comments/form", event_log: @event_log %>

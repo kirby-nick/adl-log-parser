@@ -1,0 +1,9 @@
+<%= form_with model: [@event_log, @event_log.comments.build] do |f| %>
+  <div class="">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <div class="">
+    <%= f.submit %>
+  </div>
+<% end %>

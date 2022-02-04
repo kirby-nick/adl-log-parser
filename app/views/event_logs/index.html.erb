@@ -1,0 +1,13 @@
+<h5>Logs:</h5>
+<ul>
+  <% @event_logs.each do |log| %>
+    <li>
+      ID: <%= link_to log.id, log %> -
+      Source IP: <%= log.source_ip %> -
+      Destination IP: <%= log.dest_ip %>
+    </li>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to "New Event Log", new_event_log_path %>

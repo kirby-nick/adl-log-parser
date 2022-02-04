@@ -1,0 +1,9 @@
+<div class="">
+  <h6>Comment:</h6>
+  <p><%= comment.body %></p>
+  <%= link_to "Edit", edit_event_log_comment_path(comment.event_log, comment) %>
+  <%= link_to "Delete", [comment.event_log, comment], data:{
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %>
+</div>

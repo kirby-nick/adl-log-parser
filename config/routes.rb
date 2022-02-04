@@ -3,4 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :event_logs do
+    resources :comments
+  end
+
+  root "event_logs#index"
 end

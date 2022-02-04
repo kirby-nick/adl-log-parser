@@ -1,0 +1,14 @@
+<%= form_with model: event_log do |f| %>
+  <div class="">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <%= event_log.errors.full_messages_for(:body).each do |message| %>
+      <div class="">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <div class="">
+    <%= f.submit %>
+  </div>
+<% end %>
