@@ -1,6 +1,6 @@
 <h5>Log ID: <%= @event_log.id %></h5>
-<h5>Source IP: <%= @event_log.source_ip %></h5>
-<h5>Destination IP: <%= @event_log.dest_ip %></h5>
+<h5>Source IP(<%= @event_log.category(@event_log.source_ip) %>, <%= @event_log.valid_state(@event_log.source_ip) %>): <%= @event_log.source_ip %></h5>
+<h5>Destination IP(<%= @event_log.category(@event_log.dest_ip) %>, <%= @event_log.valid_state(@event_log.dest_ip) %>): <%= @event_log.dest_ip %></h5>
 <h5>Body:</h5>
 <p><%= @event_log.body %></p>
 

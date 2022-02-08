@@ -3,8 +3,8 @@
   <% @event_logs.each do |log| %>
     <li>
       ID: <%= link_to log.id, log %> -
-      Source IP: <%= log.source_ip %> -
-      Destination IP: <%= log.dest_ip %>
+      Source IP(<%= log.category(log.source_ip) %>, <%= log.valid_state(log.source_ip) %>): <%= log.source_ip %> -
+      Destination IP(<%= log.category(log.dest_ip) %>, <%= log.valid_state(log.dest_ip) %>): <%= log.dest_ip %>
     </li>
   <% end %>
 </ul>
